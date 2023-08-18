@@ -15,8 +15,8 @@
                 <div class="cal-body">
                         <div class="cards">
                                 <input type="button" class="btn" value="C">
-                                <input type="button" class="btn" value="+/-">
-                                <input type="button" class="btn" value="%" onclick="calculatePercentage()">
+                                <input type="button" class="btn last" value="+/-">
+                                <input type="button" class="btn last" value="%" onclick="calculatePercentage()">
                                 <input type="button" class="btn last" value="/">
                         </div>
                         <div class="cards">
@@ -48,11 +48,46 @@
 
                  </div>                     
         </div>
+        <script src="./js/styles.js"></script>
 
-        <!-- ... your HTML code ... -->
-<!-- ... your HTML code ... -->
 
- <script>
+
+
+        <!-- <script>
+                const display = document.getElementById('input'); // Corrected selector
+            
+                function calculatePercentage() {
+                    try {
+                        display.value = eval(display.value) / 100;
+                    } catch (error) {
+                        display.value = 'Error';
+                    }
+                }
+            
+                const buttons = document.querySelectorAll('.btn');
+            
+                buttons.forEach(button => {
+                    button.addEventListener('click', () => {
+                        const buttonText = button.value;
+            
+                        if (buttonText === '=') {
+                            try {
+                                display.value = eval(display.value);
+                            } catch (error) {
+                                display.value = 'Error';
+                            }
+                        } else if (buttonText === 'C') {
+                            display.value = '';
+                        } else if (buttonText === 'DEL') {
+                            display.value = display.value.slice(0, -1);
+                        } else if (buttonText !== '+/-' && buttonText !== '%') {
+                            display.value += buttonText;
+                        }
+                    });
+                });
+            </script> -->
+
+ <!-- <script>
     // Get references to the input fields and buttons
     const display = document.getElementById('input'); // Corrected selector
 
@@ -80,12 +115,12 @@ const buttons = document.querySelectorAll('.btn');
                 display.value = ''; // Clear the display
             } else if (buttonText === 'DEL') {
                 display.value = display.value.slice(0, -1); // Delete the last character
-            } else {
+            } else if( buttonText !== '+/-' && buttonText !== '%'){
                 display.value += buttonText; // Add button value to display
             }
         });
     });
-</script>
+</script> -->
 
 
 

@@ -23,20 +23,18 @@ h1{
         /* border: 1px solid green; */
         width: 330px;
         height: 80px;
-        font-size: 32px;
+        font-size: 2rem;
         font-weight: bold;
         text-align: right;
         padding: 0px 5px;
         letter-spacing: 3px;
 }
-.card{
-        
-}
+
 .btn{
         width: 85px;
         height: 80px;
         font-weight: bold;
-        font-size: 32px;
+        font-size: 2rem;
         color: aliceblue;
         background-color: rgba(0, 0, 0, 0.705);
 }
