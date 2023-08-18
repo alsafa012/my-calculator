@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CALCULATOR</title>
+        <link rel="stylesheet" href="./styles/style.css">
+</head>
+<body>
+        <h1>CALCULATOR</h1>
+        <div class="card">
+                <div class="calc-head">
+                        <input type="text" id="input">
+                </div>
+                <div class="cal-body">
+                        <div class="cards">
+                                <input type="button" class="btn" value="C">
+                                <input type="button" class="btn" value="+/-">
+                                <input type="button" class="btn" value="%" onclick="calculatePercentage()">
+                                <input type="button" class="btn last" value="/">
+                        </div>
+                        <div class="cards">
+                                <input type="button" class="btn" value="7">
+                                <input type="button" class="btn" value="8">
+                                <input type="button" class="btn" value="9">
+                                <input type="button" class="btn last" value="*">
+                        </div>
+                        <div class="cards">
+                                <input type="button" class="btn" value="4">
+                                <input type="button" class="btn" value="5">
+                                <input type="button" class="btn" value="6">
+                                <input type="button" class="btn last" value="-">
+                        </div>
+                        <div class="cards">
+                                <input type="button" class="btn" value="1">
+                                <input type="button" class="btn" value="2">
+                                <input type="button" class="btn" value="3">
+                                <input type="button" class="btn last" value="+">
+                        </div>
+                        <div class="cards">
+                                <input type="button" class="btn" value="0">
+                                <input type="button" class="btn" value=".">
+                                <input type="button" class="btn" value="DEL">
+                                <input type="button" class="btn" style="background-color: rgba(137, 43, 226, 0.753);" value="=">
+                        </div>
+
+
+
+                 </div>                     
+        </div>
+
+        <!-- ... your HTML code ... -->
+<!-- ... your HTML code ... -->
+
+ <script>
+    // Get references to the input fields and buttons
+    const display = document.getElementById('input'); // Corrected selector
+
+function calculatePercentage() {
+    try {
+        display.value = eval(display.value) / 100;
+    } catch (error) {
+        display.value = 'Error';
+    }
+}
+
+const buttons = document.querySelectorAll('.btn');
+    // Add click event listeners to the buttons
+    buttons.forEach(button => {
+        button.addEventListener('click', () => {
+            const buttonText = button.value;
+
+            if (buttonText === '=') {
+                try {
+                    display.value = eval(display.value); // Evaluate the expression
+                } catch (error) {
+                    display.value = 'Error';
+                }
+            } else if (buttonText === 'C') {
+                display.value = ''; // Clear the display
+            } else if (buttonText === 'DEL') {
+                display.value = display.value.slice(0, -1); // Delete the last character
+            } else {
+                display.value += buttonText; // Add button value to display
+            }
+        });
+    });
+</script>
+
+
+
+</body>
+</html>
