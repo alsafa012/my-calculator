@@ -10,38 +10,41 @@
         <h1>CALCULATOR</h1>
         <div class="card">
                 <div class="calc-head">
-                        <input type="text" id="input">
+                        <input type="text" id="display">
+                        
+                        
                 </div>
-                <div class="cal-body">
+                <div class="cal-body" >
                         <div class="cards">
-                                <input type="button" class="btn" value="C">
-                                <input type="button" class="btn last" value="+/-">
-                                <input type="button" class="btn last" value="%" onclick="calculatePercentage()">
-                                <input type="button" class="btn last" value="/">
+                                <input onclick="clearDisplay()" type="button" class="btn" value="C">
+                                <input onclick="" type="button" class="btn last" value="+/-">
+                                <input onclick="parentageCalculate()" type="button" class="btn last" value="%">
+                                <input onclick="addToDisplay('/')" type="button" class="btn last" value="/">
+                                
                         </div>
                         <div class="cards">
-                                <input type="button" class="btn" value="7">
-                                <input type="button" class="btn" value="8">
-                                <input type="button" class="btn" value="9">
-                                <input type="button" class="btn last" value="*">
+                                <input onclick="addToDisplay('7')" type="button" class="btn" value="7">
+                                <input onclick="addToDisplay('8')" type="button" class="btn" value="8">
+                                <input onclick="addToDisplay('9')" type="button" class="btn" value="9">
+                                <input onclick="addToDisplay('*')" type="button" class="btn last" value="X">
                         </div>
                         <div class="cards">
-                                <input type="button" class="btn" value="4">
-                                <input type="button" class="btn" value="5">
-                                <input type="button" class="btn" value="6">
-                                <input type="button" class="btn last" value="-">
+                                <input onclick="addToDisplay('4')" type="button" class="btn" value="4">
+                                <input onclick="addToDisplay('5')" type="button" class="btn" value="5">
+                                <input onclick="addToDisplay('6')" type="button" class="btn" value="6">
+                                <input onclick="addToDisplay('-')" type="button" class="btn last" value="-">
                         </div>
                         <div class="cards">
-                                <input type="button" class="btn" value="1">
-                                <input type="button" class="btn" value="2">
-                                <input type="button" class="btn" value="3">
-                                <input type="button" class="btn last" value="+">
+                                <input onclick="addToDisplay('1')" type="button" class="btn" value="1">
+                                <input onclick="addToDisplay('2')" type="button" class="btn" value="2">
+                                <input onclick="addToDisplay('3')" type="button" class="btn" value="3">
+                                <input onclick="addToDisplay('+')" type="button" class="btn last" value="+">
                         </div>
                         <div class="cards">
-                                <input type="button" class="btn" value="0">
-                                <input type="button" class="btn" value=".">
-                                <input type="button" class="btn" value="DEL">
-                                <input type="button" class="btn" style="background-color: rgba(137, 43, 226, 0.753);" value="=">
+                                <input onclick="addToDisplay('0')" type="button" class="btn" value="0">
+                                <input onclick="addToDisplay('.')" type="button" class="btn" value=".">
+                                <input onclick="del()" type="button" class="btn" value="DEL">
+                                <input onclick="calculate()" type="button" class="btn" style="background-color: rgba(137, 43, 226, 0.753);" value="=">
                         </div>
 
 
@@ -49,80 +52,6 @@
                  </div>                     
         </div>
         <script src="./js/styles.js"></script>
-
-
-
-
-        <!-- <script>
-                const display = document.getElementById('input'); // Corrected selector
-            
-                function calculatePercentage() {
-                    try {
-                        display.value = eval(display.value) / 100;
-                    } catch (error) {
-                        display.value = 'Error';
-                    }
-                }
-            
-                const buttons = document.querySelectorAll('.btn');
-            
-                buttons.forEach(button => {
-                    button.addEventListener('click', () => {
-                        const buttonText = button.value;
-            
-                        if (buttonText === '=') {
-                            try {
-                                display.value = eval(display.value);
-                            } catch (error) {
-                                display.value = 'Error';
-                            }
-                        } else if (buttonText === 'C') {
-                            display.value = '';
-                        } else if (buttonText === 'DEL') {
-                            display.value = display.value.slice(0, -1);
-                        } else if (buttonText !== '+/-' && buttonText !== '%') {
-                            display.value += buttonText;
-                        }
-                    });
-                });
-            </script> -->
-
- <!-- <script>
-    // Get references to the input fields and buttons
-    const display = document.getElementById('input'); // Corrected selector
-
-function calculatePercentage() {
-    try {
-        display.value = eval(display.value) / 100;
-    } catch (error) {
-        display.value = 'Error';
-    }
-}
-
-const buttons = document.querySelectorAll('.btn');
-    // Add click event listeners to the buttons
-    buttons.forEach(button => {
-        button.addEventListener('click', () => {
-            const buttonText = button.value;
-
-            if (buttonText === '=') {
-                try {
-                    display.value = eval(display.value); // Evaluate the expression
-                } catch (error) {
-                    display.value = 'Error';
-                }
-            } else if (buttonText === 'C') {
-                display.value = ''; // Clear the display
-            } else if (buttonText === 'DEL') {
-                display.value = display.value.slice(0, -1); // Delete the last character
-            } else if( buttonText !== '+/-' && buttonText !== '%'){
-                display.value += buttonText; // Add button value to display
-            }
-        });
-    });
-</script> -->
-
-
 
 </body>
 </html>
