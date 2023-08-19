@@ -1,6 +1,4 @@
 const addDisplay = document.getElementById("display");
-//  const addDisplay = document.calculator.display;
-
 function addToDisplay(char) {
      addDisplay.value += char;
 }
